@@ -1,8 +1,11 @@
 {
-  "name": "copy-with-filename",
+  "name": "copy-with-file-name",
+  "publisher": "fouadmagdy",
+  "icon": "icon.png",
+  "repository": "https://github.com/FouadMagdy01/vscode-extension-copy-with-filename",
   "displayName": "Copy With Filename",
   "description": "Vscode extension that add the filename to the copied content from vscode",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -16,7 +19,7 @@
   "keybindings": [
     {
       "command": "copyWithFilename.copy",
-      "key": "ctrl+shift+c",
+      "key": "ctrl+c+f",
       "when": "editorTextFocus"
     }
   ],
