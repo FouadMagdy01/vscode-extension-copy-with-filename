@@ -1,0 +1,97 @@
+{
+  "name": "copy-with-filename",
+  "displayName": "Copy With Filename",
+  "description": "Vscode extension that add the filename to the copied content from vscode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "keybindings": [
+    {
+      "command": "copyWithFilename.copy",
+      "key": "ctrl+shift+c",
+      "when": "editorTextFocus"
+    }
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Copy with File Name",
+      "properties": {
+        "copyWithFilename.includeFileName": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include the file name in the copied text."
+        },
+        "copyWithFilename.useFullPath": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include the full file path instead of just the file name."
+        },
+        "copyWithFilename.commentPrefix": {
+          "type": "string",
+          "default": "",
+          "description": "Custom comment prefix (overrides language detection). Leave empty to auto-detect."
+        },
+        "copyWithFilename.commentSuffix": {
+          "type": "string",
+          "default": "",
+          "description": "Custom comment suffix. Leave empty to auto-detect."
+        },
+        "copyWithFilename.emptyLineAfterHeader": {
+          "type": "boolean",
+          "default": false,
+          "description": "Insert an empty line after the file name comment."
+        },
+        "copyWithFilename.placeHeaderBelow": {
+          "type": "boolean",
+          "default": false,
+          "description": "Place the file name comment after the selected code instead of before."
+        },
+        "copyWithFilename.languageOverrides": {
+          "type": "object",
+          "default": {},
+          "description": "Override comment prefix/suffix per language. Example: { \"python\": { \"prefix\": \"#\", \"suffix\": \"\" } }"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "copyWithFilename.copy",
+        "title": "Copy with File Name"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.99.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "ts-loader": "^9.5.2",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
