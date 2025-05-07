@@ -1,4 +1,3 @@
-````markdown
 # Copy with File Name
 
 **Copy with File Name** is a powerful and customizable VS Code extension that enhances the default copy behavior. When you copy selected code, it prepends or appends a comment showing the file name (or full path), making your shared snippets more informative.
@@ -135,4 +134,3 @@ MIT
 
 Let me know if you'd like the GitHub repo structure, logo/icon ideas, or a VS Code Marketplace description too.
 ```
-````
