@@ -1,5 +1,3 @@
----
-
 ````markdown
 # Copy with File Name
 
@@ -137,3 +135,4 @@ MIT
 
 Let me know if you'd like the GitHub repo structure, logo/icon ideas, or a VS Code Marketplace description too.
 ```
+````
